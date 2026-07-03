@@ -1,0 +1,16 @@
+.next
+node_modules
+dist
+out
+.env*.local
+.vercel
+coverage
+*.log
+*.tsbuildinfo
+test-results
+playwright-report
+
+# Android / Gradle generated files
+.gradle/
+**/build/
+local.properties

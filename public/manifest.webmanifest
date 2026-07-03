@@ -1,0 +1,26 @@
+{
+  "name": "SEEKR",
+  "short_name": "SEEKR",
+  "description": "Taktisches GPS-Versteckspiel für private Live-Matches.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#05070d",
+  "background_color": "#05070d",
+  "categories": ["games", "social", "navigation"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/maskable-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

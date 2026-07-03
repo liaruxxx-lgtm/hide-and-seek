@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SEEKR</string>
+    <string name="connection_title">SEEKR-Server nicht erreichbar</string>
+    <string name="connection_help">Starte auf dem Computer "adb reverse tcp:3000 tcp:3000". Danach erreicht die App den SEEKR-Server über localhost.</string>
+    <string name="connection_error_detail">%1$s\n\nTechnischer Hinweis: %2$s</string>
+    <string name="server_url_hint">http://127.0.0.1:3000</string>
+    <string name="connect">Verbinden</string>
+    <string name="retry">Erneut versuchen</string>
+</resources>
