@@ -273,9 +273,155 @@ html.seekr-android .seekr-live-map .leaflet-tile-pane {
   font-weight: 700;
 }
 
+.seekr-content-grid > * {
+  min-width: 0;
+}
+
 @supports (height: 100dvh) {
   body {
     min-height: 100dvh;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) and (max-width: 1023px) {
+  .seekr-shell {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .seekr-app-frame {
+    height: 100dvh;
+    min-height: 0;
+    gap: 0.45rem;
+    padding-top: max(0.35rem, env(safe-area-inset-top)) !important;
+    padding-right: max(0.45rem, env(safe-area-inset-right)) !important;
+    padding-bottom: max(0.35rem, env(safe-area-inset-bottom)) !important;
+    padding-left: calc(4.85rem + env(safe-area-inset-left)) !important;
+  }
+
+  .seekr-topbar {
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.45rem;
+    padding: 0.45rem;
+    border-radius: 18px;
+  }
+
+  .seekr-logo {
+    font-size: 1.45rem;
+  }
+
+  .seekr-top-metrics {
+    grid-template-columns: repeat(3, minmax(4.4rem, 1fr));
+    min-width: min(48vw, 23rem);
+  }
+
+  .seekr-content-grid {
+    min-height: 0;
+  }
+
+  .seekr-map-panel {
+    min-height: 0;
+  }
+
+  .seekr-side-panel,
+  .seekr-panel-scroll {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 0.15rem;
+  }
+
+  .seekr-mobile-nav {
+    inset: max(0.35rem, env(safe-area-inset-top)) max(0.4rem, env(safe-area-inset-right)) max(0.35rem, env(safe-area-inset-bottom)) auto;
+    width: 3.55rem;
+    border-radius: 20px;
+    padding: 0.35rem;
+  }
+
+  .seekr-mobile-nav > div {
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+  }
+
+  .seekr-mobile-nav button {
+    min-height: 0;
+    padding: 0.25rem;
+  }
+
+  .seekr-mobile-nav button span {
+    display: none;
+  }
+
+  .seekr-map-header {
+    left: 0.5rem;
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+
+  .seekr-map-header .glass-panel {
+    border-radius: 16px;
+    padding: 0.45rem 0.55rem;
+  }
+
+  .seekr-map-header .glass-panel:first-child {
+    max-width: min(58vw, 22rem);
+  }
+
+  .seekr-map-header .glass-panel:last-child {
+    display: none;
+  }
+
+  .seekr-map-actions {
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .seekr-map-actions .glass-panel {
+    border-radius: 16px;
+  }
+
+  .seekr-reveal-panel {
+    right: 0.5rem;
+    top: 4.65rem;
+  }
+
+  .seekr-location-dialog,
+  .seekr-join-dialog {
+    max-height: calc(100dvh - 1rem);
+    max-width: min(26rem, calc(100vw - 5.5rem));
+    overflow-y: auto;
+    border-radius: 22px;
+    padding: 0.85rem;
+  }
+
+  .seekr-location-dialog > .relative:first-child {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 16px;
+  }
+
+  .seekr-location-dialog h2 {
+    margin-top: 0.65rem;
+    font-size: 1.25rem;
+  }
+
+  .seekr-location-dialog p {
+    margin-top: 0.45rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .seekr-location-dialog .grid {
+    margin-top: 0.65rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .seekr-location-dialog button {
+    border-radius: 16px;
+    padding: 0.65rem 0.75rem;
   }
 }
 

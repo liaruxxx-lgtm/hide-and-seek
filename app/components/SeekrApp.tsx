@@ -728,7 +728,7 @@ export function SeekrApp() {
     <MotionConfig reducedMotion={isAndroidApp ? "always" : "user"}>
     <main
       className={cx(
-        "premium-shell relative text-frost lg:h-dvh lg:overflow-hidden",
+        "premium-shell seekr-shell relative text-frost lg:h-dvh lg:overflow-hidden",
         activeTab === "map"
           ? "h-dvh overflow-hidden"
           : "min-h-dvh overflow-x-hidden"
@@ -740,7 +740,7 @@ export function SeekrApp() {
 
       <div
         className={cx(
-          "relative mx-auto flex w-full max-w-[1580px] flex-col gap-3 px-3 pb-[5.5rem] pt-[max(0.75rem,env(safe-area-inset-top))] sm:gap-4 sm:px-5 sm:pb-5 lg:h-dvh lg:min-h-0",
+          "seekr-app-frame relative mx-auto flex w-full max-w-[1580px] flex-col gap-3 px-3 pb-[5.5rem] pt-[max(0.75rem,env(safe-area-inset-top))] sm:gap-4 sm:px-5 sm:pb-5 lg:h-dvh lg:min-h-0",
           activeTab === "map" ? "h-dvh min-h-0" : "min-h-dvh"
         )}
       >
@@ -763,10 +763,10 @@ export function SeekrApp() {
           <span className="relative z-10">{toast}</span>
         </div>
 
-        <section className="grid min-h-0 flex-1 gap-3 lg:grid-cols-[340px_minmax(0,1fr)_360px] xl:grid-cols-[370px_minmax(0,1fr)_390px]">
+        <section className="seekr-content-grid grid min-h-0 flex-1 gap-3 lg:grid-cols-[340px_minmax(0,1fr)_360px] xl:grid-cols-[370px_minmax(0,1fr)_390px]">
           <motion.aside
             className={cx(
-              "min-h-0",
+              "seekr-side-panel min-h-0",
               activeTab === "lobby" ? "block" : "hidden lg:block"
             )}
             initial={{ opacity: 0, y: 18 }}
@@ -800,7 +800,7 @@ export function SeekrApp() {
 
           <motion.section
             className={cx(
-              "h-full min-h-0",
+              "seekr-map-panel h-full min-h-0",
               activeTab === "map" ? "block" : "hidden lg:block"
             )}
             initial={{ opacity: 0, scale: 0.982, y: 10 }}
@@ -824,7 +824,7 @@ export function SeekrApp() {
 
           <motion.aside
             className={cx(
-              "min-h-0",
+              "seekr-side-panel min-h-0",
               activeTab === "intel" || activeTab === "studio"
                 ? "block"
                 : "hidden lg:block"
@@ -923,7 +923,7 @@ function LocationOnboardingDialog({
           role="dialog"
         >
           <motion.div
-            className="glass-panel w-full max-w-sm rounded-[32px] p-5 sm:p-6"
+            className="seekr-location-dialog glass-panel w-full max-w-sm rounded-[32px] p-5 sm:p-6"
             initial={{ opacity: 0, scale: 0.96, y: 18 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 18 }}
@@ -1004,14 +1004,14 @@ function TopBar({
           : "Setup";
 
   return (
-    <header className="glass-panel grid gap-2 rounded-[22px] p-2 sm:gap-3 sm:rounded-[32px] sm:p-3 lg:grid-cols-[1fr_auto]">
+    <header className="seekr-topbar glass-panel grid gap-2 rounded-[22px] p-2 sm:gap-3 sm:rounded-[32px] sm:p-3 lg:grid-cols-[1fr_auto]">
       <div className="relative z-10 flex min-w-0 items-center gap-2 sm:gap-3">
         <div className="grid h-10 w-10 shrink-0 place-items-center rounded-[16px] border border-white/15 bg-white/[0.08] shadow-glow sm:h-12 sm:w-12 sm:rounded-[24px]">
           <Crosshair className="h-5 w-5 text-frost sm:h-6 sm:w-6" />
         </div>
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-            <h1 className="font-display text-3xl font-semibold leading-none tracking-normal text-white sm:text-5xl">
+            <h1 className="seekr-logo font-display text-3xl font-semibold leading-none tracking-normal text-white sm:text-5xl">
               SEEKR
             </h1>
             <StatusPill icon={Lock} text={privacy} />
@@ -1025,7 +1025,7 @@ function TopBar({
         </div>
       </div>
 
-      <div className="relative z-10 grid grid-cols-3 gap-1.5 sm:grid-cols-4 sm:gap-2 lg:min-w-[520px]">
+      <div className="seekr-top-metrics relative z-10 grid grid-cols-3 gap-1.5 sm:grid-cols-4 sm:gap-2 lg:min-w-[520px]">
         <TopMetric icon={Timer} label="Status" value={statusText} />
         <div className="hidden sm:block">
           <TopMetric icon={Globe2} label="Region" value="Lokal" />
@@ -1095,7 +1095,7 @@ function LobbyPanel({
   toggleReady: () => void;
 }) {
   return (
-    <div className="grid gap-3 lg:max-h-[calc(100dvh-160px)] lg:overflow-y-auto lg:pr-1">
+    <div className="seekr-panel-scroll grid gap-3 lg:max-h-[calc(100dvh-160px)] lg:overflow-y-auto lg:pr-1">
       <Panel title="Lobby" icon={Users}>
         <div className="grid gap-3">
           {!inLobby ? (
@@ -1356,7 +1356,7 @@ function IntelPanel({
   voiceEnabled: boolean;
 }) {
   return (
-    <div className="grid gap-3 lg:max-h-[calc(100dvh-160px)] lg:overflow-y-auto lg:pr-1">
+    <div className="seekr-panel-scroll grid gap-3 lg:max-h-[calc(100dvh-160px)] lg:overflow-y-auto lg:pr-1">
       <Panel title="Lagebild" icon={Radar}>
         <div className="grid grid-cols-2 gap-2">
           <IntelStat icon={Clock3} label="Enthüllung" value="30-60 s" />
@@ -1492,7 +1492,7 @@ function StudioPanel({
   notify: (message: string) => void;
 }) {
   return (
-    <div className="grid gap-3 lg:max-h-[calc(100dvh-160px)] lg:overflow-y-auto lg:pr-1">
+    <div className="seekr-panel-scroll grid gap-3 lg:max-h-[calc(100dvh-160px)] lg:overflow-y-auto lg:pr-1">
       <Panel title="Studio" icon={Camera}>
         <div className="grid grid-cols-2 gap-2">
           {creatorTools.map((tool, index) => (
@@ -1613,7 +1613,7 @@ function JoinDialog({
           role="dialog"
         >
           <motion.div
-            className="glass-panel w-full max-w-sm rounded-[32px] p-4"
+            className="seekr-join-dialog glass-panel w-full max-w-sm rounded-[32px] p-4"
             initial={{ opacity: 0, scale: 0.96, y: 18 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 18 }}
@@ -1878,7 +1878,7 @@ function MobileNav({
   setActiveTab: (tab: MobileTab) => void;
 }) {
   return (
-    <nav className="glass-nav fixed bottom-[max(0.5rem,env(safe-area-inset-bottom))] left-2 right-2 z-50 rounded-[22px] p-1 lg:hidden sm:left-3 sm:right-3 sm:rounded-[30px] sm:p-1.5">
+    <nav className="seekr-mobile-nav glass-nav fixed bottom-[max(0.5rem,env(safe-area-inset-bottom))] left-2 right-2 z-50 rounded-[22px] p-1 lg:hidden sm:left-3 sm:right-3 sm:rounded-[30px] sm:p-1.5">
       <div className="relative z-10 grid grid-cols-4 gap-1">
         {mobileTabs.map((tab) => {
           const Icon = tab.icon;

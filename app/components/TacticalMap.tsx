@@ -203,7 +203,7 @@ export function TacticalMap({
         }}
       /> : null}
 
-      <div className="absolute left-3 right-3 top-3 z-30 flex items-start justify-between gap-3">
+      <div className="seekr-map-header absolute left-3 right-3 top-3 z-30 flex items-start justify-between gap-3">
         <div className="glass-panel rounded-[18px] p-2 text-white sm:rounded-[26px] sm:p-3">
           <div className="relative z-10 flex items-center gap-2 text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-white/45">
             <SignalHigh className="h-3.5 w-3.5 text-white/60" />
@@ -237,7 +237,7 @@ export function TacticalMap({
         </div>
       </div>
 
-      <div className="absolute bottom-[4.75rem] left-2 right-2 z-30 grid grid-cols-[minmax(0,1fr)_auto] gap-1.5 sm:bottom-3 sm:left-3 sm:right-3 sm:gap-2">
+      <div className="seekr-map-actions absolute bottom-[4.75rem] left-2 right-2 z-30 grid grid-cols-[minmax(0,1fr)_auto] gap-1.5 sm:bottom-3 sm:left-3 sm:right-3 sm:gap-2">
         <div className="glass-panel grid grid-cols-3 gap-1 rounded-[18px] p-1 text-white sm:gap-2 sm:rounded-[26px] sm:p-2">
           <Metric icon={Wifi} label="Ping" value={inLobby ? "18 ms" : "--"} />
           <Metric icon={BatteryMedium} label="Akku" mobileValue="Eco" value="Schonend" />
@@ -272,7 +272,7 @@ export function TacticalMap({
         </div>
       </div>
 
-      <div className="glass-panel absolute right-3 top-3 z-30 rounded-[16px] px-2.5 py-1.5 text-white sm:right-4 sm:top-28 sm:rounded-[24px] sm:px-3 sm:py-2">
+      <div className="seekr-reveal-panel glass-panel absolute right-3 top-3 z-30 rounded-[16px] px-2.5 py-1.5 text-white sm:right-4 sm:top-28 sm:rounded-[24px] sm:px-3 sm:py-2">
         <div className="relative z-10 flex items-center gap-2 text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-white/45">
           <Radio className="h-3.5 w-3.5 text-white/60" />
           Enthüllung
