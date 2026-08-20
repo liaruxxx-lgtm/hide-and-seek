@@ -1,5 +1,16 @@
 # SEEKR
 
+> [!WARNING]
+> **Projektstatus:** Dieses Projekt befindet sich in aktiver Entwicklung, ist noch
+> nicht fertiggestellt und kann unvollständige oder fehlerhafte Funktionen
+> enthalten. Änderungen können jederzeit und ohne Vorankündigung erfolgen.
+>
+> **Haftungshinweis:** Nutzung, Installation und Weiterverwendung erfolgen auf
+> eigene Gefahr. Soweit gesetzlich zulässig, wird keine Haftung für unmittelbare
+> oder mittelbare Schäden, Datenverluste, Fehlfunktionen, Sicherheitsprobleme
+> oder sonstige Folgen übernommen. Es gibt keine Garantie für Funktionsfähigkeit,
+> Richtigkeit, Sicherheit oder Eignung für einen bestimmten Zweck.
+
 SEEKR ist ein mobiler Progressive-Web-App-Prototyp für echte GPS-Versteckspiel-Matches.
 
 ## Run
